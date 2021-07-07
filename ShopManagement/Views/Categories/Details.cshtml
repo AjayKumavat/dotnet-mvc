@@ -1,0 +1,31 @@
+﻿@model ShopManagement.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="section__gradient section__form section__form-link">
+    <div class="container body-content">
+        <h2 class="heading-secondary heading-secondary--white u-margin-top-huge">Category Details</h2>
+
+        <div>
+            <h4>Category</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CategoryName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</section>

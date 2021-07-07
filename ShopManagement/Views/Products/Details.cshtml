@@ -1,0 +1,38 @@
+﻿@model ShopManagement.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="section__gradient section__form section__form-link">
+    <div class="container body-content">
+        <h2 class="heading-secondary heading-secondary--white u-margin-top-huge">Details</h2>
+
+        <div>
+            <h4>Product</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category.CategoryName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Category.CategoryName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</section>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ShopManagement.Models.ProductDetails>
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<section class="section__gradient">
+    <div class="container body-content">
+        
+        <h2 class="heading-secondary heading-secondary--white u-margin-top-huge">Product List</h2>
+
+        <div class="table__container">
+            <table id="example" class="table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ProductId</th>
+                        <th>ProductName</th>
+                        <th>CategoryId</th>
+                        <th>CategoryName</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.productDetails.ProductId</td>
+                        <td>@item.productDetails.ProductName</td>
+                        <td>@item.categoryDetails.CategoryId</td>
+                        <td>@item.categoryDetails.CategoryName</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+
+    </div>
+</section>
+
+@section scripts {
+
+    <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+    @*<script>
+        $(document).ready(function () {
+            $('#productTable').DataTable(
+                {
+                    "ajax": {
+                        "url": "productdetails/Index",
+                        "type": "GET",
+                        "datatype": "json"
+                    },
+                    "columns": [
+                        { "data": "ProductId" },
+                        { "data": "ProductName" },
+                        { "data": "CategoryId" },
+                        { "data": "CategoryName" }
+                    ]
+                });
+        });
+    </script>*@
+
+}
+
